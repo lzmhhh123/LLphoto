@@ -1,38 +1,33 @@
 import React, {Component} from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Container, Header, Content, Footer, FooterTap, Icon, Text, Button } from 'native-base';
+import { View, Text, StyleSheet } from 'react-native';
+import { TabNavigator } from 'react-navigation'
+
+const HomeScreen = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Home Screen</Text>
+  </View>
+);
+
+const DetailsScreen = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Details Screen</Text>
+  </View>
+);
+
+const RootNavigator = TabNavigator({
+  Home: {
+    screen: HomeScreen,
+  },
+  Details: {
+    screen: DetailsScreen,
+  },
+});
 
 export default class App extends Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
-      <Container style={styles.container}>
-        <Header>LLphoto</Header>
-        <Content />
-        <Footer>
-          <FooterTap>
-            <Button vertical>
-              <Icon name="camera" />
-              <Text>Camera</Text>
-            </Button>
-            <Button vertical>
-              <Icon name="camera" />
-              <Text>Camera</Text>
-            </Button>
-            <Button vertical>
-              <Icon name="camera" />
-              <Text>Camera</Text>
-            </Button>
-            <Button vertical>
-              <Icon name="camera" />
-              <Text>Camera</Text>
-            </Button>
-          </FooterTap>
-        </Footer>
-      </Container>
-    );
+      <RootNavigator />
+    )
   }
 }
 
