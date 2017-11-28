@@ -1,27 +1,62 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { TabNavigator } from 'react-navigation'
+import { View, Text, StyleSheet, Image } from 'react-native';
+import { TabNavigator } from 'react-navigation';
+import { Icon } from "react-native-elements";
+import Homepage from "./src/Homepage";
+// class HomeScreen extends Component {
+//   static navigationOptions = {
+//     tabBarLabel: 'Home',
+//     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+//     tabBarIcon: <Icon name="home" />,
+//   };
+//   render() {
+//     return (
+//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//         <Text>Home Screen</Text>
+//       </View>
+//     )
+//   }
+// };
 
-const HomeScreen = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Home Screen</Text>
-  </View>
-);
-
-const DetailsScreen = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Details Screen</Text>
-  </View>
-);
+class DetailsScreen extends Component {
+  static navigationOptions = {
+    tabBarLabel: 'Details',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('./icons/ic_home_black_24dp/android/drawable-hdpi/ic_home_black_24dp.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+      </View>
+    )
+  }
+};
 
 const RootNavigator = TabNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: Homepage
   },
   Details: {
-    screen: DetailsScreen,
+    screen: DetailsScreen
   },
+}, {
+  tabBarPosition: 'bottom',
+  tarBarOptions: {
+    activeTintColor: '#e91e63',
+    showIcon: true,
+    showLabel: false
+  }
 });
+
+// RootNavigator.navigationOptions = {
+//   title: 'LLphoto'
+// }
 
 export default class App extends Component {
   render() {
@@ -37,5 +72,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  icon: {
+    width: 12,
+    height: 12,
   },
 });
