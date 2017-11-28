@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 import { Icon } from "react-native-elements";
 import Homepage from "./src/Homepage";
+import Photos from "./src/Photos";
 // class HomeScreen extends Component {
 //   static navigationOptions = {
 //     tabBarLabel: 'Home',
@@ -18,32 +19,32 @@ import Homepage from "./src/Homepage";
 //   }
 // };
 
-class DetailsScreen extends Component {
-  static navigationOptions = {
-    tabBarLabel: 'Details',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('./icons/ic_home_black_24dp/android/drawable-hdpi/ic_home_black_24dp.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),
-  };
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-      </View>
-    )
-  }
-};
+// class DetailsScreen extends Component {
+//   static navigationOptions = {
+//     tabBarLabel: 'Details',
+//     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+//     tabBarIcon: ({ tintColor }) => (
+//       <Image
+//         source={require('./icons/ic_home_black_24dp/android/drawable-hdpi/ic_home_black_24dp.png')}
+//         style={[styles.icon, {tintColor: tintColor}]}
+//       />
+//     ),
+//   };
+//   render() {
+//     return (
+//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//         <Text>Details Screen</Text>
+//       </View>
+//     )
+//   }
+// };
 
 const RootNavigator = TabNavigator({
   Home: {
     screen: Homepage
   },
-  Details: {
-    screen: DetailsScreen
+  Photos: {
+    screen: Photos
   },
 }, {
   tabBarPosition: 'bottom',
