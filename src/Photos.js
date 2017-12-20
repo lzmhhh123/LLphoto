@@ -33,15 +33,11 @@ export default class Photos extends Component {
         let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
         let images = {};
         for (let key in data['edges']) {
-          console.log(data['edges'][key]['node']['timestamp']);
           let date = new Date();
-          date.setTime(data['edges'][key]['node']['timestamp']);
-          date = date.toString();
-          console.log(date);
+          date.setTime(data['edges'][key]['node']['timestamp'] * 1000);
+          date = date.toDateString();
           if (images[date] === undefined) images[date] = [];
           images[date].push(data['edges'][key]['node']['image']['uri']);
-          //array.push(data['edges'][key]['node']['image']['uri']);
-          //console.log(data['edges'][key]['node']);
         }
         for (let key in images) {
           images[key] = ds.cloneWithRows(images[key]);
@@ -61,13 +57,13 @@ export default class Photos extends Component {
   render() {
     let { images } = this.state;
     return (
-      <View style={{flex: 1}}>
+      <ScrollView style={{flex: 1}}>
         {
           (() => {
             let list = [];
             for (let key in images) {
               list.push(
-                <View key={key}>
+                <ScrollView key={key}>
                   <Text>{key}</Text>
                   <Divider style={{backgroundColor: 'gray'}} />
                   <ListView
@@ -75,15 +71,15 @@ export default class Photos extends Component {
                     dataSource={images[key]}
                     enableEmptySections={true}
                     renderRow={this.renderRow} />
-                </View>
+                </ScrollView>
               )
             }
-            list.map(data => {
+            return list.map(data => {
               return data;
             })
           })()
         }
-      </View>
+      </ScrollView>
     )
   }
 }
