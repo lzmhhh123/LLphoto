@@ -10,7 +10,7 @@ import {
   ListView
 } from 'react-native';
 import { MaterialDialog } from 'react-native-material-dialog';
-import { Card, Divider } from 'react-native-elements';
+import { Card, Divider, SearchBar } from 'react-native-elements';
 import ImagePicker from 'react-native-image-picker';
 const Dimensions = require('Dimensions');
 
@@ -24,8 +24,11 @@ export default class Photos extends Component {
   constructor() {
     super()
     this.state = {
-      images: {}
+      images: {},
+      searchText: ''
     }
+    this.renderRow = this.renderRow.bind(this);
+    this.changeText = this.changeText.bind(this);
   }
   componentWillMount() {
     CameraRoll.getPhotos({ first: 1000, assetType: 'Photos' })
@@ -47,75 +50,45 @@ export default class Photos extends Component {
   }
   renderRow(rowData) {
     return (
-      <TouchableOpacity activeOpacity={0.8} onPress={() => {console.log('onPress')}} >
+      <TouchableOpacity activeOpacity={0.8} onPress={() => {
+        return this.props.navigation.navigate('ImageProfile', {
+          tag: ['1', '2', '3'],
+          discription: ['lzmhhhh', 'lzmhhh123', 'lzm'],
+          uri: rowData
+        }
+      )}}>
         <View style={{width: cellWH, height: cellWH, marginLeft: vMargin, marginTop: hMargin, alignItems: 'center'}} >
           <Image source={{uri: rowData}} style={{height: 100, width: 100}} />
         </View>
       </TouchableOpacity>
     )
   }
+  changeText(text) {
+    this.setState({ searchText: text });
+  }
   render() {
     let { images } = this.state;
+    let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    let list = [];
+    for (let key in images) {
+      list.push(
+        <View key={key} style={{marginTop: 20}}>
+          <Text>{key}</Text>
+          <Divider style={{backgroundColor: 'gray'}} />
+          <ListView
+            contentContainerStyle={{flexDirection: 'row',  flexWrap: 'wrap', alignItems: 'center'}}
+            dataSource={images[key]}
+            enableEmptySections={true}
+            renderRow={this.renderRow} />
+        </View>
+      )
+    }
+    list = ds.cloneWithRows(list);
     return (
-      <ScrollView style={{flex: 1}}>
-        {
-          (() => {
-            let list = [];
-            for (let key in images) {
-              list.push(
-                <ScrollView key={key}>
-                  <Text>{key}</Text>
-                  <Divider style={{backgroundColor: 'gray'}} />
-                  <ListView
-                    contentContainerStyle={{flexDirection: 'row',  flexWrap: 'wrap', alignItems: 'center'}}
-                    dataSource={images[key]}
-                    enableEmptySections={true}
-                    renderRow={this.renderRow} />
-                </ScrollView>
-              )
-            }
-            return list.map(data => {
-              return data;
-            })
-          })()
-        }
-      </ScrollView>
+      <View>
+        <SearchBar lightTheme onChangeText={this.changeText} placeholder='Type here to search tag.' />
+        <ListView dataSource={list} renderRow={(rowData) => rowData} enableEmptySections={true} />
+      </View>
     )
   }
 }
-
-// async function requestAlbumPermission() {
-//   try {
-//     if (PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE)
-//         === PermissionsAndroid.RESULTS.GRANTED) {
-//       CameraRoll.getPhotos({ first: 5 })
-//         .then((data) => {
-//           console.log(data);
-//         })
-//     } else {
-//       const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
-//         {
-//           'title': 'LLphoto Permission',
-//           'message': 'LLphoto request accessing your album.'
-//         }
-//       )
-//       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-//         CameraRoll.getPhotos({ first: 5 })
-//           .then((data) => {
-//             console.log(data)
-//           })
-//       }
-//     }
-//   } catch (err) {
-//     console.warn(err)
-//   }
-// }
-// requestAlbumPermission()
-
-// ImagePicker.openPicker({
-//   width: 300,
-//   height: 400,
-//   cropping: true
-// }).then(image => {
-//   console.log(image);
-// });

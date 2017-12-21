@@ -1,50 +1,37 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from "react-native-elements";
 import Homepage from "./src/Homepage";
 import Photos from "./src/Photos";
-// class HomeScreen extends Component {
-//   static navigationOptions = {
-//     tabBarLabel: 'Home',
-//     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-//     tabBarIcon: <Icon name="home" />,
-//   };
-//   render() {
-//     return (
-//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//         <Text>Home Screen</Text>
-//       </View>
-//     )
-//   }
-// };
+import ImageProfile from "./src/ImageProfile";
 
-// class DetailsScreen extends Component {
-//   static navigationOptions = {
-//     tabBarLabel: 'Details',
-//     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-//     tabBarIcon: ({ tintColor }) => (
-//       <Image
-//         source={require('./icons/ic_home_black_24dp/android/drawable-hdpi/ic_home_black_24dp.png')}
-//         style={[styles.icon, {tintColor: tintColor}]}
-//       />
-//     ),
-//   };
-//   render() {
-//     return (
-//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//         <Text>Details Screen</Text>
-//       </View>
-//     )
-//   }
-// };
+const RootStackNavigator = StackNavigator({
+  Main: {
+    screen: Photos,
+    path: 'main',
+    navigationOptions: ({navigation}) => ({
+      title: 'Photos'
+    })
+  },
+  ImageProfile: {
+    screen: ImageProfile,
+    path: 'image',
+    navigationOptions: ({navigation}) => ({
+      title: "Image profile"
+    })
+  }
+})
 
 const RootNavigator = TabNavigator({
   Home: {
-    screen: Homepage
+    screen: Homepage,
+    navigationOptions: ({navigation}) => ({
+      title: 'Homepage'
+    })
   },
   Photos: {
-    screen: Photos
+    screen: RootStackNavigator
   },
 }, {
   tabBarPosition: 'bottom',
@@ -54,10 +41,6 @@ const RootNavigator = TabNavigator({
     showLabel: false
   }
 });
-
-// RootNavigator.navigationOptions = {
-//   title: 'LLphoto'
-// }
 
 export default class App extends Component {
   render() {
