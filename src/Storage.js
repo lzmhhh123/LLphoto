@@ -4,6 +4,7 @@ default export class {
 
   static get(key) {
     return AsyncStorage.getItem(key).then((value) => {
+      if (value === null) return {};
       const jsonValue = JSON.parse(value);
       return jsonValue;
     })

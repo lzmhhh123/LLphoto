@@ -4,24 +4,49 @@ import {
   StyleSheet,
   Image,
   Text,
-  Linking
+  Linking,
+  CameraRoll
 } from 'react-native';
 import {Card, Icon, Button} from 'react-native-elements';
+import {BubblesLoader} from 'react-native-indicator';
+
+const fs = require('react-native-fs');
+console.log(fs);
 
 export default class extends Component {
   constructor() {
     super()
+    this.state = {
+      loading: true
+    }
   }
-  static navigationOptions = {
-    tabBarLabel: 'Home',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: <Icon name="home" />,
-  };
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({loading: false})
+    }, 10000);
+    let uri = [];
+    CameraRoll.getPhotos({ first: 1, assetType: 'Photos' })
+      .then( async (data) => {
+        for (let i = 0; i < data.edges.length; i++) {
+          let uriI = data.edges[i].node.image.uri;
+          console.log(uriI);
+          // fs.readFile(uriI, 'base64')
+          //   .then(res => {
+          //     console.log(res);
+          //   })
+        }
+      })
+  }
+  // static navigationOptions = {
+  //   tabBarLabel: 'Home',
+  //   // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+  //   tabBarIcon: <Icon name="home" />,
+  // };
   render() {
     let url = "https://github.com/lzmhhh123/LLphoto";
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Card title="ABOUT APP">
+        <Card title="ABOUT APP" containerStyle={{marginBottom: 20}}>
           <Image source={require("../img/LOGO2.png")} resizeMode="contain" style={{width: '100%'}}/>
           <Text style={{marginBottom: 10}} >
             A photo ablum converting your photos into structural and searchable metadata.
@@ -39,6 +64,8 @@ export default class extends Component {
               }
             })} />
         </Card>
+        {this.state.loading ? <BubblesLoader /> : null}
+        {this.state.loading ? <Text>Photos are syncing. Please wait...</Text> : null}
       </View>
     )
   }

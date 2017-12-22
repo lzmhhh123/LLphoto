@@ -31,7 +31,7 @@ export default class Photos extends Component {
     this.changeText = this.changeText.bind(this);
   }
   componentWillMount() {
-    CameraRoll.getPhotos({ first: 1000, assetType: 'Photos' })
+    CameraRoll.getPhotos({ first: 10000, assetType: 'Photos' })
       .then((data) => {
         let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
         let images = {};

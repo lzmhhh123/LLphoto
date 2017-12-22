@@ -5,6 +5,7 @@ import { Icon } from "react-native-elements";
 import Homepage from "./src/Homepage";
 import Photos from "./src/Photos";
 import ImageProfile from "./src/ImageProfile";
+// import Album from "./src/Album";
 
 const RootStackNavigator = StackNavigator({
   Main: {
@@ -23,16 +24,35 @@ const RootStackNavigator = StackNavigator({
   }
 })
 
-const RootNavigator = TabNavigator({
-  Home: {
+const HomeStackNavigator = StackNavigator({
+  Main: {
     screen: Homepage,
     navigationOptions: ({navigation}) => ({
       title: 'Homepage'
     })
+  }
+})
+
+// const AlbumStackNavigator = StackNavigator({
+//   Main: {
+//     screen: Album,
+//     navigationOptions: ({navigation}) => ({
+//       title: 'Alums'
+//     })
+//   }
+// })
+
+
+const RootNavigator = TabNavigator({
+  Home: {
+    screen: HomeStackNavigator,
   },
   Photos: {
     screen: RootStackNavigator
   },
+  // Album: {
+  //   screen: Ablum
+  // }
 }, {
   tabBarPosition: 'bottom',
   tarBarOptions: {
@@ -49,16 +69,3 @@ export default class App extends Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  icon: {
-    width: 12,
-    height: 12,
-  },
-});
