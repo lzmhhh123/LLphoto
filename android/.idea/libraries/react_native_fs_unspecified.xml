@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="react-native-fs-unspecified">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../node_modules/react-native-fs/android/build/intermediates/bundles/default/res" />
-      <root url="jar://$PROJECT_DIR$/../node_modules/react-native-fs/android/build/intermediates/bundles/default/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/LLphotoV4/react-native-fs/unspecified/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/LLphotoV4/react-native-fs/unspecified/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

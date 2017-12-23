@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\LLphoto\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+        "outputFile": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 185
                 },
                 "from": {
-                    "file": "C:\\Users\\lzmhhh123\\.android\\build-cache\\7937c4eb7b02b948fca221236b58d91959decd00\\output\\res\\values-v23\\values-v23.xml",
+                    "file": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v23\\values-v23.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 260
                 },
                 "from": {
-                    "file": "C:\\Users\\lzmhhh123\\.android\\build-cache\\7937c4eb7b02b948fca221236b58d91959decd00\\output\\res\\values-v23\\values-v23.xml",
+                    "file": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v23\\values-v23.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 347
                 },
                 "from": {
-                    "file": "C:\\Users\\lzmhhh123\\.android\\build-cache\\7937c4eb7b02b948fca221236b58d91959decd00\\output\\res\\values-v23\\values-v23.xml",
+                    "file": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v23\\values-v23.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -69,7 +69,7 @@
                     "endOffset": 675
                 },
                 "from": {
-                    "file": "C:\\Users\\lzmhhh123\\.android\\build-cache\\7937c4eb7b02b948fca221236b58d91959decd00\\output\\res\\values-v23\\values-v23.xml",
+                    "file": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v23\\values-v23.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -90,7 +90,7 @@
                     "endOffset": 1015
                 },
                 "from": {
-                    "file": "C:\\Users\\lzmhhh123\\.android\\build-cache\\7937c4eb7b02b948fca221236b58d91959decd00\\output\\res\\values-v23\\values-v23.xml",
+                    "file": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v23\\values-v23.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -110,7 +110,7 @@
                     "endOffset": 1120
                 },
                 "from": {
-                    "file": "C:\\Users\\lzmhhh123\\.android\\build-cache\\7937c4eb7b02b948fca221236b58d91959decd00\\output\\res\\values-v23\\values-v23.xml",
+                    "file": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-v23\\values-v23.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,

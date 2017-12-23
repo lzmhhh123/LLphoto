@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\LLphoto\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
+        "outputFile": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 105
                 },
                 "from": {
-                    "file": "C:\\Users\\lzmhhh123\\.android\\build-cache\\7937c4eb7b02b948fca221236b58d91959decd00\\output\\res\\values-w360dp\\values-w360dp.xml",
+                    "file": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-w360dp\\values-w360dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

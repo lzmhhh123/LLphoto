@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="imagepipeline-okhttp3-1.3.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/4c62380bfbf85af43af009dffa499acefe2b4024/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/4c62380bfbf85af43af009dffa499acefe2b4024/output/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

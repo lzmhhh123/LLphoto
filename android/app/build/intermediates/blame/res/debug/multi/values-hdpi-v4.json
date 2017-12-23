@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\LLphoto\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "outputFile": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "C:\\Users\\lzmhhh123\\.android\\build-cache\\7937c4eb7b02b948fca221236b58d91959decd00\\output\\res\\values-hdpi\\values-hdpi.xml",
+                    "file": "E:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-hdpi\\values-hdpi.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

@@ -1,7 +1,4 @@
-#Fri Dec 22 22:02:28 CST 2017
-base.0=E\:\\LLphoto\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bcebd5bfa83fe96deb612ee9f38d5a0531cae357
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=E\:\\LLphoto\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_34473161b8989ab8ce90273ff78a75f01b4f9a74\\classes.dex
-base.1=E\:\\LLphoto\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_34473161b8989ab8ce90273ff78a75f01b4f9a74
-file.0=E\:\\LLphoto\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bcebd5bfa83fe96deb612ee9f38d5a0531cae357\\classes.dex
+#Sat Dec 23 10:53:06 CST 2017
+base.0=E\:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=E\:\\LLphotoV4\\LLphotoV4\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

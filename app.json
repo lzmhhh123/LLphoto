@@ -1,7 +1,4 @@
 {
-  "expo": {
-    "sdkVersion": "22.0.0"
-  },
-  "name": "LLphoto",
-  "displayName": "LLphoto"
+  "name": "LLphotoV4",
+  "displayName": "LLphotoV4"
 }

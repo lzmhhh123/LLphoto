@@ -1,10 +1,10 @@
 import { AsyncStorage } from 'react-native';
 
-default export class {
+export default class {
 
   static get(key) {
     return AsyncStorage.getItem(key).then((value) => {
-      if (value === null) return {};
+      if (value === null) return null;
       const jsonValue = JSON.parse(value);
       return jsonValue;
     })

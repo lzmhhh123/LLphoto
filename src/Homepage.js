@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {Card, Icon, Button} from 'react-native-elements';
 import {BubblesLoader} from 'react-native-indicator';
+import Storage from './Storage';
 
 const fs = require('react-native-fs');
 console.log(fs);
@@ -21,27 +22,37 @@ export default class extends Component {
     }
   }
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({loading: false})
-    }, 10000);
     let uri = [];
-    CameraRoll.getPhotos({ first: 1, assetType: 'Photos' })
+    CameraRoll.getPhotos({ first: 1000, assetType: 'Photos' })
       .then( async (data) => {
         for (let i = 0; i < data.edges.length; i++) {
           let uriI = data.edges[i].node.image.uri;
-          console.log(uriI);
-          // fs.readFile(uriI, 'base64')
-          //   .then(res => {
-          //     console.log(res);
-          //   })
+          let value = await Storage.get(uriI).then(val => val);
+          // console.log(uriI, value);
+          if (value === null) {
+            console.log('need to solve' + i);
+            await fs.readFile(uriI, 'base64').then(res => {
+              fetch('http://10.131.235.84:5000/upload', {
+                method: 'POST',
+                headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ data: res })
+              })
+              .then(res => {
+                let dd = JSON.parse(res._bodyText);
+                console.log(i, dd);
+                Storage.save(uriI, dd);
+              })
+            })
+          }
         }
+        setTimeout(() => this.setState({
+          loading: false
+        }), 10000);
       })
   }
-  // static navigationOptions = {
-  //   tabBarLabel: 'Home',
-  //   // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-  //   tabBarIcon: <Icon name="home" />,
-  // };
   render() {
     let url = "https://github.com/lzmhhh123/LLphoto";
     return (

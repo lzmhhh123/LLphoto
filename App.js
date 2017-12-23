@@ -5,10 +5,11 @@ import { Icon } from "react-native-elements";
 import Homepage from "./src/Homepage";
 import Photos from "./src/Photos";
 import ImageProfile from "./src/ImageProfile";
-// import Album from "./src/Album";
+import AlbumProfile from "./src/AlbumProfile";
+import Album from "./src/Album";
 
 const RootStackNavigator = StackNavigator({
-  Main: {
+  MainPhotos: {
     screen: Photos,
     path: 'main',
     navigationOptions: ({navigation}) => ({
@@ -25,7 +26,7 @@ const RootStackNavigator = StackNavigator({
 })
 
 const HomeStackNavigator = StackNavigator({
-  Main: {
+  MainHome: {
     screen: Homepage,
     navigationOptions: ({navigation}) => ({
       title: 'Homepage'
@@ -33,15 +34,29 @@ const HomeStackNavigator = StackNavigator({
   }
 })
 
-// const AlbumStackNavigator = StackNavigator({
-//   Main: {
-//     screen: Album,
-//     navigationOptions: ({navigation}) => ({
-//       title: 'Alums'
-//     })
-//   }
-// })
-
+const AlbumStackNavigator = StackNavigator({
+  MainAlbum: {
+    screen: Album,
+    path: 'main',
+    navigationOptions: ({navigation}) => ({
+      title: 'Ablums'
+    })
+  },
+  AlbumProfile: {
+    screen: AlbumProfile,
+    path: 'profile',
+    navigationOptions: ({navigation}) => ({
+      title: 'Ablum Profile'
+    })
+  },
+  ImageProfile2: {
+    screen: ImageProfile,
+    path: 'imageProfile2',
+    navigationOptions: ({navigation}) => ({
+      title: "Image profile"
+    })
+  }
+})
 
 const RootNavigator = TabNavigator({
   Home: {
@@ -50,6 +65,9 @@ const RootNavigator = TabNavigator({
   Photos: {
     screen: RootStackNavigator
   },
+  Album: {
+    screen: AlbumStackNavigator
+  }
   // Album: {
   //   screen: Ablum
   // }
