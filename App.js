@@ -39,14 +39,14 @@ const AlbumStackNavigator = StackNavigator({
     screen: Album,
     path: 'main',
     navigationOptions: ({navigation}) => ({
-      title: 'Ablums'
+      title: 'Albums'
     })
   },
   AlbumProfile: {
     screen: AlbumProfile,
     path: 'profile',
     navigationOptions: ({navigation}) => ({
-      title: 'Ablum Profile'
+      title: 'Album Profile'
     })
   },
   ImageProfile2: {
@@ -69,7 +69,7 @@ const RootNavigator = TabNavigator({
     screen: AlbumStackNavigator
   }
   // Album: {
-  //   screen: Ablum
+  //   screen: Album
   // }
 }, {
   tabBarPosition: 'bottom',

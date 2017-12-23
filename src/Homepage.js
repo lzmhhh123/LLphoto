@@ -60,7 +60,7 @@ export default class extends Component {
         <Card title="ABOUT APP" containerStyle={{marginBottom: 20}}>
           <Image source={require("../img/LOGO2.png")} resizeMode="contain" style={{width: '100%'}}/>
           <Text style={{marginBottom: 10}} >
-            A photo ablum converting your photos into structural and searchable metadata.
+            A photo Album converting your photos into structural and searchable metadata.
           </Text>
           <Button
             icon={{name: 'home'}}
