@@ -28,7 +28,7 @@ export default class extends Component {
             enableEmptySections={true}
             renderRow={this.renderRow}
           />
-          <Text h4>Discription:</Text>
+          <Text h4>Description:</Text>
           <Divider style={{marginBottom: 10}} />
           {
             discription.map(data => {
