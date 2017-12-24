@@ -1,5 +1,7 @@
 # LLphoto
 An Android app that Cloud Stores, Tags, and Describes your photos.
 
-<img src="/pre1.gif" />
-<img src="/pre2.gif" />
+## Preview
+<div style="float: left;"><img src="/pre1.gif" width="300" height="auto" /></div>
+<div style="float: left;margin-left: 50px;"><img src="/pre2.gif" width="300" height="auto" /></div>
+
