@@ -35,7 +35,7 @@ export default class Photos extends Component {
     this.renderRow = this.renderRow.bind(this);
   }
   componentWillMount() {
-    CameraRoll.getPhotos({ first: 1000, assetType: 'Photos' })
+    CameraRoll.getPhotos({ first: 2000, assetType: 'Photos' })
       .then(async (data) => {
         let images = {};
         for (let key in data['edges']) {
@@ -43,7 +43,10 @@ export default class Photos extends Component {
           date.setTime(data['edges'][key]['node']['timestamp'] * 1000);
           date = date.toDateString();
           let uri = data['edges'][key]['node']['image']['uri'];
-          let tmp = await Storage.get(uri).then(val => val);
+          let tmp = null;
+          while (tmp === null) {
+            tmp = await Storage.get(uri).then(val => val);
+          }
           if (tmp === null) continue;
           if (images[date] === undefined) images[date] = [];
           let obj = {

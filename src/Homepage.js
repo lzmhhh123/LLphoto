@@ -12,7 +12,6 @@ import {BubblesLoader} from 'react-native-indicator';
 import Storage from './Storage';
 
 const fs = require('react-native-fs');
-console.log(fs);
 
 export default class extends Component {
   constructor() {
@@ -23,7 +22,7 @@ export default class extends Component {
   }
   componentDidMount() {
     let uri = [];
-    CameraRoll.getPhotos({ first: 1000, assetType: 'Photos' })
+    CameraRoll.getPhotos({ first: 2000, assetType: 'Photos' })
       .then( async (data) => {
         for (let i = 0; i < data.edges.length; i++) {
           let uriI = data.edges[i].node.image.uri;

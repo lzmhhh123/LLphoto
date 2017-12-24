@@ -18,13 +18,16 @@ export default class extends Component {
     }
   }
   componentWillMount() {
-    CameraRoll.getPhotos({ first: 1000, assetType: 'Photos' })
+    CameraRoll.getPhotos({ first: 2000, assetType: 'Photos' })
       .then(async (data) => {
         let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
         let images = {};
         for (let key in data['edges']) {
           let uri = data['edges'][key]['node']['image']['uri'];
-          let obj = await Storage.get(uri).then(val => val);
+          let obj = null;
+          while (obj === null) {
+            obj = await Storage.get(uri).then(val => val);
+          }
           if (obj === null) continue;
           for (let i = 0; i < 3; ++i) {
             if (images[obj.tags[i]] === undefined) {

@@ -31,7 +31,7 @@ export default class Photos extends Component {
     this.renderRow = this.renderRow.bind(this);
   }
   componentWillMount() {
-    CameraRoll.getPhotos({ first: 1000, assetType: 'Photos' })
+    CameraRoll.getPhotos({ first: 2000, assetType: 'Photos' })
       .then(async (data) => {
         let images = {};
         for (let key in data['edges']) {
